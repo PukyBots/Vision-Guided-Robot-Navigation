@@ -67,6 +67,12 @@ DICT_4X4_50
 
 Any marker ID from the dictionary can be used.
 
+<p align="center">
+  <img src="images/bot.jpeg" width="400" height="400">
+</p>
+
+
+
 ---
 
 ### Interactive Goal Selection
@@ -111,6 +117,12 @@ Row 4: [S, 0, 0, 0, 0]
 
 ========================================
 ```
+
+<p align="center">
+  <img src="images/terminal.png" width="800" height="700">
+</p>
+
+
 
 ---
 
