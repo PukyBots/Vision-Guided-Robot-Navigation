@@ -77,6 +77,7 @@ void pivot(int degrees, bool isLeft) {
 
     digitalWrite(DIR1, HIGH);
     digitalWrite(DIR2, LOW);
+    
 
   } else {
 
@@ -90,6 +91,17 @@ void pivot(int degrees, bool isLeft) {
   while (left_ticks < targetTicks);
 
   stopRobot();
+
+if (degrees == 180) {
+    Serial.println("B_DONE");
+  }
+  else if (isLeft) {
+    Serial.println("L_DONE");
+  }
+  else {
+    Serial.println("R_DONE");
+  }
+
 }
 void moveByTime(int seconds, int direction) {
   digitalWrite(DIR1, direction); digitalWrite(DIR2, direction);
@@ -115,6 +127,7 @@ void moveForwardCell() {
   while (left_ticks < targetTicks);
 
   stopRobot();
+  Serial.println("F_DONE");
 }
 
 

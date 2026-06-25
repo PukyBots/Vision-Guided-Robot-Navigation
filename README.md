@@ -1,6 +1,6 @@
-# Vision-Based Arena Mapping and Robot Localization
+# Vision-Based Arena Mapping and Time-Constrained Robot Navigation
 
-A computer vision system for detecting a **5×5 arena**, generating an **occupancy grid**, identifying **obstacles and bonus objects**, localizing a robot using **ArUco markers**, estimating robot orientation, and selecting navigation goals interactively.
+A computer vision system for detecting a **5×5 arena**, generating an **occupancy grid**, identifying **obstacles and bonus objects**, localizing a robot using **ArUco markers**, and performing **time-constrained autonomous navigation** with bonus-aware path planning.
 
 <p align="center">
   <img src="images/arena.png" width="600">
@@ -15,7 +15,10 @@ A computer vision system for detecting a **5×5 arena**, generating an **occupan
 - Divides the arena into a **5×5 grid**.
 - Labels each cell with `(row, col)` coordinates.
 
+---
+
 ### Occupancy Grid Generation
+
 Creates a 5×5 occupancy matrix:
 
 | Value | Meaning |
@@ -25,12 +28,9 @@ Creates a 5×5 occupancy matrix:
 | 2 | Blue Bonus |
 | 3 | Red Bonus |
 
-
 <p align="center">
   <img src="images/grid.png" width="600">
 </p>
-
-
 
 ---
 
@@ -43,7 +43,7 @@ Detects blue-colored bonus objects using HSV thresholding.
 Detects red-colored bonus objects using HSV thresholding.
 
 #### Obstacle Detection
-Detects brown-colored obstacles and maps them to grid cells.
+Detects brown-colored obstacles and maps them to corresponding grid cells.
 
 ---
 
@@ -52,11 +52,12 @@ Detects brown-colored obstacles and maps them to grid cells.
 Uses an **ArUco Marker** mounted on the robot.
 
 Features:
-- Detect robot position
-- Detect robot grid cell
-- Detect robot orientation
-- Display heading arrow
-- Mark robot start position
+
+- Robot position detection
+- Grid-cell localization
+- Orientation estimation
+- Heading visualization
+- Start-position identification
 
 Supported marker family:
 
@@ -175,13 +176,8 @@ The system displays:
 
 ## Future Improvements
 
-- A* Path Planning
-- Dijkstra Path Planning
-- BFS Path Planning
-- Real Robot Navigation
 - ROS2 Integration
 - Multi-Robot Support
-- MQTT Communication
 - Dynamic Obstacle Avoidance
 
 ---
@@ -191,3 +187,4 @@ The system displays:
 Pulkit Garg
 
 Robotics | Computer Vision | Autonomous Navigation
+Contributions made by Srinivas University students Afeez Mohammad & Moosa Mubasir.
